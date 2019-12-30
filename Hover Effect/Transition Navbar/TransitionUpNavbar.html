@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <style>
+    .navbar_new {
+      width: 100%;
+      height: 100px;
+      text-align: center;
+    }
+
+    /* Navigation button */
+    .new_list {
+      color: white !important;
+      font-weight: 500;
+      text-decoration: none;
+      padding: 10px;
+      cursor: pointer;
+      height: 50px;
+      moz-transition: all .4s ease-in-out;
+      -o-transition: all .4s ease-in-out;
+      -webkit-transition: all .4s ease-in-out;
+      transition: all .4s ease-in-out;
+      background-color: #a52033;
+      border-radius: 5px;
+
+    }
+
+    /* Hover effect towards button */
+    .new_list:hover {
+      font-weight: 500;
+      color: white !important;
+      width: 100%;
+      height: 100%;
+      background-color: rgb(211, 9, 50);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    .new_list:focus {
+      outline: none;
+      text-decoration: none;
+    }
+
+    /*fixed position customize */
+    .sticky {
+      position: fixed;
+      height: 70px;
+      bottom: 0;
+      z-index: 1;
+      top: 0;
+      right: 0;
+      margin: 0;
+      padding: 0;
+      border-bottom: thin solid black;
+      animation: smoothScroll 1s forwards;
+    }
+
+    @keyframes smoothScroll {
+      0% {
+        transform: translateY(-40px);
+      }
+
+      100% {
+        transform: translateY(0px);
+      }
+    }
+
+    /* Navigation container */
+    .navbar_new .navbar_new_product {
+      display: inline-block;
+      margin: 22px 0;
+      z-index: 99;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    /* navigation container when it's hover */
+    .navbar_new_product:hover {
+
+      transform: translate(0, -5px);
+    }
+
+    #topbtn {
+      position: fixed;
+      bottom: 50px;
+      right: 40px;
+      font-size: 22px;
+      height: 50px;
+      width: 50px;
+      cursor: pointer;
+      color: white;
+      background-color: #a52033;
+      border: none;
+    }
+
+    .p {
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+
+    @media (min-width: 481px) and (max-width: 933px) {
+
+      #section-1,
+      #section-2,
+      #section-3,
+      #section-4,
+      #section-5 {
+        padding: 0;
+        margin: 0;
+      }
+
+      #sidebar_nav {
+        display: none;
+      }
+
+
+    }
+
+    /* laptop device screen */
+    @media (min-width: 768px) and (max-width: 1024px) {
+      #navbar_new {
+        white-space: normal;
+      }
+
+    }
+  </style>
+
+</head>
+
+<body>
+  <nav class="navbar_new" id="navbar_new">
+    <ul class="navbar_new_contain">
+      <li class="navbar_new_product"><a href="#section-1" class="new_list">Features</a></li>
+      <li class="navbar_new_product"><a href="#section-2" class="new_list">Specifications</a></li>
+      <li class="navbar_new_product"><a href="#section-3" class="new_list">Dimensions</a></li>
+      <li class="navbar_new_product"><a href="#section-4" class="new_list">Documents</a></li>
+      <li class="navbar_new_product"><a href="#section-5" class="new_list">Support</a></li>
+    </ul>
+  </nav>
+
+  <section class="p" style="background-color: red;"></section>
+  <section class="p" style="background-color: blue;"></section>
+  <section class="p" style="background-color: green;"></section>
+
+
+  <script type="text/javascript">
+    var navbarF = document.getElementById("navbar_new");
+    var navbarS = document.getElementById("sidebar_nav");
+    var windowH = $(window).height(),
+      top;
+    // The function actually applying the offset
+    function offsetAnchor() {
+      if (location.hash.length !== 0) {
+        window.scrollTo(window.scrollX, window.scrollY - 50);
+      }
+    }
+    $(document).on('click', 'a[href^="#"]', function (event) {
+      window.setTimeout(function () {
+        offsetAnchor();
+      }, 0);
+    });
+
+    $(document).scroll(function () {
+      if ($(window).width() > 669) {
+        $('#topbtn').hide();
+      } else {
+        if ($(this).scrollTop() > 40) {
+          $('#topbtn').fadeIn();
+        } else {
+          $('#topbtn').fadeOut();
+        }
+      }
+
+    });
+    $('#topbtn').click(function () {
+      $('html,body').animate({
+        scrollTop: 0
+      }, 800);
+    });
+
+    $(document).ready(function () {
+      $(window).scroll(function () {
+        if ($(window).scrollTop() > windowH - 450) {
+          $(navbarS).addClass("sticky");
+        } else {
+          $(navbarS).removeClass("sticky");
+        }
+      })
+      if ($(window).width() > 481 && $(window).width() < 768) {
+        $(navbarS).removeClass("sticky");
+        $(navbarS).addClass("hidemenu");
+      }
+    });
+  </script>
+
+</body>
+
+</html>

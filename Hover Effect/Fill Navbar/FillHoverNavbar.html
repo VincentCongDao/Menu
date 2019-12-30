@@ -1,0 +1,420 @@
+<style>
+    /* Navigation bar */
+    .navbar_new {
+        width: 100%;
+        text-align: center;
+        background-color: white;
+    }
+
+    /* Navigation button */
+    .new_list {
+        color: rgb(0, 0, 0) !important;
+        font-weight: 500;
+        text-decoration: none;
+        padding: 35px 40px 25px 40px;
+        cursor: pointer;
+        height: 50px;
+        moz-transition: all .4s ease-in-out;
+        -o-transition: all .4s ease-in-out;
+        -webkit-transition: all .4s ease-in-out;
+        transition: all .4s ease-in-out;
+
+    }
+
+    /* Hover effect towards button */
+    .new_list:hover {
+        font-weight: 500;
+        color: white !important;
+        width: 100%;
+        height: 100%;
+        background-position: 100% 0 !important;
+        moz-transition: all .4s ease-in-out !important;
+        -o-transition: all .4s ease-in-out !important;
+        -webkit-transition: all .4s ease-in-out !important;
+        transition: all .4s ease-in-out !important;
+        background-size: 300% 100%;
+        background-image: linear-gradient(to right, #41211cc0, #e43603, #fa7199, #e85a19);
+    }
+
+    .new_list:focus {
+        outline: none;
+        text-decoration: none;
+    }
+
+    /*fixed position customize */
+    .sticky {
+        position: fixed;
+        height: 70px;
+        bottom: 0;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        margin: 0;
+        padding: 0;
+        border-bottom: thin solid black;
+        animation: smoothScroll 1s forwards;
+    }
+
+    @keyframes smoothScroll {
+        0% {
+            transform: translateY(-40px);
+        }
+
+        100% {
+            transform: translateY(0px);
+        }
+    }
+
+    /* Navigation container */
+    .navbar_new .navbar_new_product {
+        display: inline-block;
+        margin: 22px 0;
+        z-index: 99;
+    }
+
+    /*Navigation button customize */
+    .navbar_new .navbar_new_product .new_list {
+        color: #ffffff;
+        text-transform: uppercase;
+    }
+
+    /*Section customize */
+    #section-1>p {
+        padding-bottom: 50px;
+    }
+
+    /* Section center; */
+    .product_section {
+        padding: 0 5em;
+        padding-top: 5em;
+    }
+
+    @media (min-width: 320px) and (max-width: 480px) {
+        .navbar_new {
+            display: none;
+        }
+
+        #section-1,
+        #section-2,
+        #section-3,
+        #section-4,
+        #section-5 {
+            padding: 0;
+            margin: 0;
+        }
+    }
+
+    @media (min-width: 481px) and (max-width: 933px) {
+        .navbar_new {
+            display: none;
+        }
+
+        #section-1,
+        #section-2,
+        #section-3,
+        #section-4,
+        #section-5 {
+            padding: 0;
+            margin: 0;
+        }
+
+
+    }
+
+    @media (min-width: 768px) and (max-width: 1024px) {
+        #navbar_new {
+            white-space: normal;
+        }
+
+        .navbar_new_contain>.navbar_new_product {
+            display: inline-block;
+            float: none;
+        }
+    }
+</style>
+
+<body>
+
+    <!-- navigation -->
+    <nav class="navbar_new" id="navbar_new">
+        <ul class="navbar_new_contain">
+            <li class="navbar_new_product"><a href="#section-1" class="new_list">Features</a></li>
+            <li class="navbar_new_product"><a href="#section-2" class="new_list">Specifications</a></li>
+            <li class="navbar_new_product"><a href="#section-3" class="new_list">Dimensions</a></li>
+            <li class="navbar_new_product"><a href="#section-4" class="new_list">Documents</a></li>
+            <li class="navbar_new_product"><a href="#section-5" class="new_list">Support</a></li>
+        </ul>
+    </nav>
+
+
+
+    <!-- section 1: feature -->
+    <section class="product_section" id="section-1">
+        <h1>Features</h1>
+        <img src="connection.PNG" alt="connector">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel euismod sem, nec efficitur mauris. Duis
+            a
+            enim et nunc tristique venenatis. Fusce aliquam ut lorem eu consequat. Nam ac tellus maximus, placerat eros
+            sit
+            amet, egestas turpis. Ut maximus commodo ipsum, eget egestas elit aliquet ut. Donec imperdiet lectus quam,
+            in
+            vestibulum erat cursus aliquet. Nam sed est erat. Praesent mollis libero sit amet tincidunt gravida. In quis
+            nibh aliquam, sollicitudin dui sed, elementum mauris. Nulla finibus mauris eget commodo vestibulum. Sed
+            vulputate, ante sed ultricies varius, tortor urna aliquet velit, non volutpat libero neque at sapien. Morbi
+            faucibus, mi at vehicula imperdiet, nibh nibh convallis mauris, quis blandit velit orci et tellus. Curabitur
+            vitae efficitur turpis, bibendum venenatis orci. Sed ac tempor dolor, in bibendum metus. Aliquam at
+            vestibulum
+            nisl, vitae ullamcorper felis. Suspendisse nisl elit, venenatis at imperdiet nec, varius eget erat.
+            </BR></BR>
+            Sed facilisis nibh felis, quis dictum mi consequat ac. Proin et neque dapibus, venenatis lacus nec,
+            tristique
+            velit. Maecenas fermentum lectus eu mi congue, vel elementum nisi varius. In hac habitasse platea dictumst.
+            Sed
+            lobortis magna non accumsan gravida. Phasellus sit amet venenatis metus. Cras molestie eu nunc ut congue.
+            Cras
+            eros metus, laoreet a libero eget, rutrum maximus eros. Nulla velit justo, sodales ac luctus feugiat, rutrum
+            sed
+            risus. Curabitur elit elit, tincidunt sit amet lorem a, laoreet sollicitudin felis. Ut ultrices eros eu
+            tortor
+            dignissim, sit amet consectetur sem lacinia.
+            </BR></BR>
+            Quisque blandit lectus est, at hendrerit nisi hendrerit vitae. Ut interdum urna velit, quis tempus leo
+            sollicitudin a. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+            Etiam iaculis velit at lectus luctus, vitae consequat lorem rhoncus. Mauris leo elit, congue vitae aliquet
+            et,
+            mattis a odio. Quisque fermentum quis arcu eu aliquet. Aliquam consequat turpis nec lorem fermentum
+            pellentesque. Suspendisse potenti. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+            inceptos himenaeos. Duis metus eros, molestie aliquam vestibulum eget, cursus a nisl. Sed nec auctor sem, ut
+            venenatis ex. Vivamus hendrerit pulvinar scelerisque. Curabitur rutrum tellus ac ligula luctus sagittis.
+            Praesent accumsan egestas est molestie feugiat. Pellentesque in diam ac dui gravida facilisis non eu odio.
+        </p>
+    </section>
+    <!-- section 2: specifications -->
+    <section class="product_section" id="section-2">
+        <h1>Specifications</h1>
+        <table style="width: 100%">
+            <tbody>
+                <tr>
+                    <th style="background-color: #e6e7e8;text-align: center">MODEL</th>
+                    <th style="background-color: #e6e7e8;text-align: center" colspan="2">AVR-HT532C</th>
+                </tr>
+                <tr>
+                    <td style="width: 20%" rowspan="3"><strong>SYSTEM</strong></td>
+                    <td style="border-left: 1px solid #eee;width: 20%">Compression</td>
+                    <td style="border-left: 1px solid #eee;width: 60%">Standard H.265 High Profile</td>
+                </tr>
+                <tr>
+                    <td style="border-left: 1px solid #eee">CPU</td>
+                    <td style="border-left: 1px solid #eee">Cortex A9</td>
+                </tr>
+                <tr>
+                    <td style="border-left: 1px solid #eee">OS</td>
+                    <td style="border-left: 1px solid #eee">Embedded Linux</td>
+                </tr>
+                <tr>
+                    <td style="width: 20%" rowspan="4"><strong>VIDEO</strong></td>
+                    <td style="border-left: 1px solid #eee;width: 20%">Input</td>
+                    <td style="border-left: 1px solid #eee;width: 60%">BNC × 32 / IP x 16</td>
+                </tr>
+                <tr>
+                    <td style="border-left: 1px solid #eee">Resolution</td>
+                    <td style="border-left: 1px solid #eee">TVI / AHD : 5MP@20fps; 4MP, 3MP, 1080P, 720P, WD1 Real Time
+                        CVI : 4MP, 3MP, 1080P, 720P Real Time</td>
+                </tr>
+                <tr>
+                    <td style="border-left: 1px solid #eee">IP Channel</td>
+                    <td style="border-left: 1px solid #eee">&nbsp;8 additional, can convert 16 Analog (Max 24 IPC)</td>
+                </tr>
+                <tr>
+                    <td style="border-left: 1px solid #eee">Output</td>
+                    <td style="border-left: 1px solid #eee">HDMI × 1 : 1920 × 1080
+                        VGA × 1 : 1920 × 1080
+                        BNC × 1 : CVBS (Used as the main or spot output)</td>
+                </tr>
+                <tr>
+                    <td style="width: 20%" rowspan="3"><strong>AUDIO</strong></td>
+                    <td style="border-left: 1px solid #eee;width: 20%">Input</td>
+                    <td style="border-left: 1px solid #eee;width: 60%">RCA × 16</td>
+                </tr>
+                <tr>
+                    <td style="border-left: 1px solid #eee">Output</td>
+                    <td style="border-left: 1px solid #eee">RCA × 1</td>
+                </tr>
+                <tr>
+                    <td style="border-left: 1px solid #eee">Two-way Audio</td>
+                    <td style="border-left: 1px solid #eee">Take Up Channel One Audio Input</td>
+                </tr>
+                <tr>
+                    <td style="width: 20%" rowspan="4"><strong>RECORD</strong></td>
+                    <td style="border-left: 1px solid #eee;width: 20%">Resolution</td>
+                    <td style="border-left: 1px solid #eee;width: 60%">5MP Lite, 4MP Lite, 1080P, 1080P Lite, 720P, WD1
+                    </td>
+                </tr>
+                <tr>
+                    <td style="border-left: 1px solid #eee">Frame Rate</td>
+                    <td style="border-left: 1px solid #eee">5MP Lite : 10fps (PAL / NTSC)
+                        4MP Lite / 1080p : 12fps (NTSC) / 15fps (PAL)
+                        1080P Lite / 720P / WD1: 25fps (PAL) / 30fps (NTSC)</td>
+                </tr>
+                <tr>
+                    <td style="border-left: 1px solid #eee">Bit Rate</td>
+                    <td style="border-left: 1px solid #eee">32Kbps ~ 5Mbps</td>
+                </tr>
+                <tr>
+                    <td style="border-left: 1px solid #eee">Mode</td>
+                    <td style="border-left: 1px solid #eee">Manual, Timer, Motion, Sensor</td>
+                </tr>
+                <tr>
+                    <td style="width: 20%" rowspan="2"><strong>IP INPUT</strong></td>
+                    <td style="border-left: 1px solid #eee;width: 20%">Resolution</td>
+                    <td style="border-left: 1px solid #eee;width: 60%">5MP / 4MP / 3MP / 1080P / 960P / 720P</td>
+                </tr>
+                <tr>
+                    <td style="border-left: 1px solid #eee">Frame Rate</td>
+                    <td style="border-left: 1px solid #eee">25fps (PAL) / 30fps (NTSC)</td>
+                </tr>
+                <tr>
+                    <td style="width: 20%" rowspan="4"><strong>PLAYBACK</strong></td>
+                    <td style="border-left: 1px solid #eee;width: 20%">Playback</td>
+                    <td style="border-left: 1px solid #eee;width: 60%">Maximum 16 Channels</td>
+                </tr>
+                <tr>
+                    <td style="border-left: 1px solid #eee">Search</td>
+                    <td style="border-left: 1px solid #eee">Time Slice / Time / Event / Tag Search</td>
+                </tr>
+                <tr>
+                    <td style="border-left: 1px solid #eee">Smart Search</td>
+                    <td style="border-left: 1px solid #eee">Highlighted color to display the camera record in a certain
+                        period of time, different colors refers to different record events</td>
+                </tr>
+                <tr>
+                    <td style="border-left: 1px solid #eee">Function</td>
+                    <td style="border-left: 1px solid #eee">Play, Pause, FF, FB, Digital zoom, etc.</td>
+                </tr>
+                <tr>
+                    <td style="width: 20%" rowspan="4"><strong>ALARM</strong></td>
+                    <td style="border-left: 1px solid #eee;width: 20%">Mode</td>
+                    <td style="border-left: 1px solid #eee;width: 60%">Manual, Sensor, Motion, Exception</td>
+                </tr>
+                <tr>
+                    <td style="border-left: 1px solid #eee">Input</td>
+                    <td style="border-left: 1px solid #eee">16</td>
+                </tr>
+                <tr>
+                    <td style="border-left: 1px solid #eee">Output</td>
+                    <td style="border-left: 1px solid #eee">4</td>
+                </tr>
+                <tr>
+                    <td style="border-left: 1px solid #eee">Trigger Actions</td>
+                    <td style="border-left: 1px solid #eee">Record, Snap, Preset, E-mail, etc.</td>
+                </tr>
+                <tr>
+                    <td style="width: 20%" rowspan="3"><strong>NETWORK</strong></td>
+                    <td style="border-left: 1px solid #eee;width: 20%">Interface</td>
+                    <td style="border-left: 1px solid #eee;width: 60%">RJ45 10M / 100Mbps / 1000Mbps × 1</td>
+                </tr>
+                <tr>
+                    <td style="border-left: 1px solid #eee">Protocol</td>
+                    <td style="border-left: 1px solid #eee">TCP / IP, PPPoE, DHCP, DNS, DDNS, UPnP, NTP, SMTP</td>
+                </tr>
+                <tr>
+                    <td style="border-left: 1px solid #eee">Web Client</td>
+                    <td style="border-left: 1px solid #eee">Multiple Online Users</td>
+                </tr>
+                <tr>
+                    <td style="width: 20%" rowspan="1"><strong>MOBILE DEVICE</strong></td>
+                    <td style="border-left: 1px solid #eee;width: 20%">OS</td>
+                    <td style="border-left: 1px solid #eee;width: 60%">iOS, Android®</td>
+                </tr>
+                <tr>
+                    <td style="width: 20%" rowspan="1"><strong>STORAGE</strong></td>
+                    <td style="border-left: 1px solid #eee;width: 20%">HDD</td>
+                    <td style="border-left: 1px solid #eee;width: 60%">SATA ×4, Max. 8TB per HDD</td>
+                </tr>
+                <tr>
+                    <td style="width: 20%" rowspan="2"><strong>BACKUP</strong></td>
+                    <td style="border-left: 1px solid #eee;width: 20%">Local Backup</td>
+                    <td style="border-left: 1px solid #eee;width: 60%">U disk, USB removable HDD</td>
+                </tr>
+                <tr>
+                    <td style="border-left: 1px solid #eee">Network Backup</td>
+                    <td style="border-left: 1px solid #eee">Yes</td>
+                </tr>
+                <tr>
+                    <td style="width: 20%" rowspan="3"><strong>PORT</strong></td>
+                    <td style="border-left: 1px solid #eee;width: 20%">RS485</td>
+                    <td style="border-left: 1px solid #eee;width: 60%">RS485 × 1, Connect to PTZ or Keyboard</td>
+                </tr>
+                <tr>
+                    <td style="border-left: 1px solid #eee">USB</td>
+                    <td style="border-left: 1px solid #eee">USB 2.0 x 1, USB 2.0 x 1</td>
+                </tr>
+                <tr>
+                    <td style="border-left: 1px solid #eee">Remote Controller</td>
+                    <td style="border-left: 1px solid #eee">Optional</td>
+                </tr>
+                <tr>
+                    <td style="width: 20%" rowspan="4"><strong>OTHERS</strong></td>
+                    <td style="border-left: 1px solid #eee;width: 20%">Power Supply</td>
+                    <td style="border-left: 1px solid #eee;width: 60%">ATX250W</td>
+                </tr>
+                <tr>
+                    <td style="border-left: 1px solid #eee">Consumption</td>
+                    <td style="border-left: 1px solid #eee">30W (Without HDD)</td>
+                </tr>
+                <tr>
+                    <td style="border-left: 1px solid #eee">Dimensions (mm)</td>
+                    <td style="border-left: 1px solid #eee">430mm x 450mm x 89mm (W x H x D)</td>
+                </tr>
+                <tr>
+                    <td style="border-left: 1px solid #eee">Work Environment</td>
+                    <td style="border-left: 1px solid #eee">14°F ~ 122°F (-10°C ~ 50°C), 10% ~ 90% Relative Humidity
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <!-- section 3: Dimensions-->
+    <section class="product_section" id="section-3">
+        <h1>Dimensions</h1>
+        <img src="random-camera.jpg">
+    </section>
+    <section class="product_section" id="section-4">
+        <h1>Documents</h1>
+
+    </section>
+    <section class="product_section" id="section-5">
+        <h1>Support</h1>
+
+    </section>
+</body>
+<script>
+    var navbarF = document.getElementById("navbar_new");
+    var windowH = $(window).height(),
+        top;
+    // The function actually applying the offset
+    function offsetAnchor() {
+        if (location.hash.length !== 0) {
+            window.scrollTo(window.scrollX, window.scrollY - 50);
+        }
+    }
+    $(document).on('click', 'a[href^="#"]', function (event) {
+        window.setTimeout(function () {
+            offsetAnchor();
+        }, 0);
+    });
+    $(document).ready(function () {
+        $(window).scroll(function () {
+            if ($(window).scrollTop() > windowH - 450) {
+                $(navbarF).addClass("sticky");
+            } else {
+                $(navbarF).removeClass("sticky");
+            }
+        })
+        if ($(window).width() > 481 && $(window).width() < 768) {
+            $(navbarF).removeClass("sticky");
+            $(navbarF).addClass("hidemenu");
+        }
+
+    });
+</script>
