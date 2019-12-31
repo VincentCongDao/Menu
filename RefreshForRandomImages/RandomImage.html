@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!--Don't forget Jquery-->
+    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js'></script>
+
+    <!--Little CSS fade in -->
+    <style>
+        .page-refresh {
+            background-size: cover;
+            -webkit-animation: fade-in 2s ease;
+            -moz-animation: fade-in ease-in-out 2s both;
+            -ms-animation: fade-in ease-in-out 2s both;
+            -o-animation: fade-in ease-in-out 2s both;
+            animation: fade-in 2s ease;
+            visibility: visible;
+            -webkit-backface-visibility: hidden;
+            width: 100%;
+            height: auto;
+        }
+
+        @-webkit-keyframes fade-in {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @-moz-keyframes fade-in {
+            0% {
+                opacity: 0
+            }
+
+            100% {
+                opacity: 1
+            }
+        }
+
+        @-o-keyframes fade-in {
+            0% {
+                opacity: 0
+            }
+
+            100% {
+                opacity: 1
+            }
+        }
+
+        @keyframes fade-in {
+            0% {
+                opacity: 0
+            }
+
+            100% {
+                opacity: 1
+            }
+        }
+
+        .information_container {
+            width: 30%;
+            height: 40%;
+            background-color: rgba(221, 221, 221, 0.596);
+            text-align: center;
+            transform: translate(600px, -250px)
+        }
+
+
+        .header_container {
+            height: 400px;
+            margin: 0;
+            padding: 0;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="header_container">
+        <div class="slider-container">
+
+        </div>
+    </div>
+
+    <script>
+        // set an array of images
+        $(document).ready(function () {
+            var images = ["https://images4.alphacoders.com/206/thumb-1920-20658.jpg",
+                "https://images8.alphacoders.com/380/thumb-1920-380977.jpg",
+                "https://images6.alphacoders.com/678/thumb-1920-678636.jpg",
+                "https://images7.alphacoders.com/361/thumb-1920-361863.jpg"
+            ];
+            var imagesContain = $('.slider-container');
+
+            // images into slider-container 
+            $('<img class="page-refresh" src="' + images[Math.floor(Math.random() * images.length)] + '">')
+                .appendTo(imagesContain);
+
+        })
+
+    </script>
+
+</body>
+
+</html>
