@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Left Side Bar </title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <style type="text/css">
+    /* Navigation bar */
+    .navbar_new {
+      width: 100%;
+      text-align: center;
+      background-color: white;
+    }
+
+    /* Navigation button */
+    .new_list {
+      color: rgb(0, 0, 0) !important;
+      font-weight: 500;
+      text-decoration: none;
+      padding: 10px;
+      cursor: pointer;
+      height: 50px;
+      moz-transition: all .4s ease-in-out;
+      -o-transition: all .4s ease-in-out;
+      -webkit-transition: all .4s ease-in-out;
+      transition: all .4s ease-in-out;
+
+    }
+
+    /* Hover effect towards button */
+    .new_list:hover {
+      font-weight: 500;
+      color: white !important;
+      width: 100%;
+      height: 100%;
+      background-position: 100% 0 !important;
+      moz-transition: all .4s ease-in-out !important;
+      -o-transition: all .4s ease-in-out !important;
+      -webkit-transition: all .4s ease-in-out !important;
+      transition: all .4s ease-in-out !important;
+      background-size: 300% 100%;
+      background-image: linear-gradient(to right, #41211cc0, #971B2F, #fa7199, #971B2F);
+    }
+
+    .new_list:focus {
+      outline: none;
+      text-decoration: none;
+    }
+
+    /*fixed position customize */
+    .sticky {
+      position: fixed;
+      height: 70px;
+      bottom: 0;
+      z-index: 1;
+      top: 0;
+      margin: 0;
+      padding: 0;
+      border-bottom: thin solid black;
+      animation: smoothScroll 1s forwards;
+    }
+
+    @keyframes smoothScroll {
+      0% {
+        transform: translateY(-40px);
+      }
+
+      100% {
+        transform: translateY(0px);
+      }
+    }
+    /*Section customize */
+    #section-1>p {
+      padding-bottom: 50px;
+    }
+
+    /* Section center; */
+    .product_section {
+      padding: 0 5em;
+      padding-top: 5em;
+    }
+    #section-4{
+      padding: 0;
+      margin: 0;
+    }
+    #section-4 h1{
+      padding: 0 5em;
+    }
+    @media (min-width: 320px) and (max-width: 480px) {
+      .navbar_new {
+        display: none;
+      }
+
+      #section-1,
+      #section-2,
+      #section-3,
+      #section-4,
+      #section-5 {
+        padding: 0;
+        margin: 0;
+      }
+    }
+
+    @media (min-width: 481px) and (max-width: 933px) {
+      .navbar_new {
+        display: none;
+      }
+
+      #section-1,
+      #section-2,
+      #section-3,
+      #section-4,
+      #section-5 {
+        padding: 0;
+        margin: 0;
+      }
+
+
+    }
+
+    @media (min-width: 768px) and (max-width: 1024px) {
+      #navbar_new {
+        white-space: normal;
+      }
+
+      .navbar_new_contain>.navbar_new_product {
+        display: inline-block;
+        float: none;
+      }
+    }
+
+    /* Section header */
+    .header {
+      background: teal;
+      height: 75vh;
+      width: 100%;
+    }
+
+    .menu_contain>img {
+      float: left;
+      width: 200px;
+    }
+
+    .menu {
+      width: 100%;
+      height: 0;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+
+    }
+
+    .menu_contain>.menu_list {
+      display: inline;
+
+    }
+
+    .menu_contain>.menu_list:nth-child(1):hover {
+      content: "";
+      background: rgba(158, 10, 10, 0.705);
+      background-size: 300% 100%;
+    }
+
+    .menu_list>.menu_area:hover {
+      color: pink;
+    }
+
+    .menu_area.active {
+      border-bottom: 5px solid rgba(158, 10, 10, 0.705);
+    }
+
+    .menu_area {
+      padding: 0 5px;
+      text-decoration: none;
+    }
+
+    #mySidenav a {
+      position: absolute;
+      left: -135px;
+      transition: 0.3s;
+      padding: 15px;
+      width: 150px;
+      text-decoration: none;
+      font-size: 20px;
+      color: black;
+      border-radius: 0 5px 5px 0;
+      display: inline-block;
+      overflow: hidden;
+      border: thin solid black;
+      background-color: white;
+    }
+
+
+    /* side bar navigation throughout the product page */
+    #mySidenav a:hover {
+      left: -10px;
+    }
+
+    #mySidenav a:nth-child(2) {
+      margin: 55px 0;
+    }
+
+    #mySidenav a:nth-child(3) {
+      margin: 110px 0;
+    }
+
+    #mySidenav a:nth-child(4) {
+      margin: 165px 0;
+    }
+
+    #mySidenav a:nth-child(5) {
+      margin: 220px 0;
+    }
+
+    .fa {
+      float: right;
+    }
+
+    #mySidenav {
+      background-color: white;
+      /* position: fixed;
+      top: 0%;
+      left: 0;
+      right: 0;
+      margin: 0;
+      padding: 0; */
+
+    }
+  </style>
+
+</head>
+
+<body>
+  <nav class="menu">
+    <ul class="menu_contain">
+      <img src="original-logo-svg.svg" alt="company logo">
+      <li class="menu_list"><a href="#" class="menu_area">HOME</li>
+      <li class="menu_list"><a href="#" class="menu_area">DOWNLOAD CENTER</li>
+      <li class="menu_list"><a href="#" class="menu_area">SUPPORT</li>
+    </ul>
+  </nav>
+  <!-- section: header -->
+  <div class="header">
+    <p> header </p>
+  </div>
+
+  <!-- sidebar -->
+  <div id="mySidenav" class="sidenav">
+    <a href="#section-1" id="about">Features <i class="fa fa-server"></i></a>
+    <a href="#section-2" id="blog">Specifications<i class="fa fa-server"></i></a>
+    <a href="#section-3" id="projects">Projects<i class="fa fa-server"></i></a>
+    <a href="#section-4" id="contact">Contact<i class="fa fa-server"></i></a>
+    <a href="#section-5" id="contact">Contact<i class="fa fa-server"></i></a>
+  </div>
+
+  <!-- section 1: feature -->
+  <section class="product_section" id="section-1">
+    <h1>Features</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel euismod sem, nec efficitur mauris. Duis a
+      enim et nunc tristique venenatis. Fusce aliquam ut lorem eu consequat. Nam ac tellus maximus, placerat eros sit
+      amet, egestas turpis. Ut maximus commodo ipsum, eget egestas elit aliquet ut. Donec imperdiet lectus quam, in
+      vestibulum erat cursus aliquet. Nam sed est erat. Praesent mollis libero sit amet tincidunt gravida. In quis
+      nibh aliquam, sollicitudin dui sed, elementum mauris. Nulla finibus mauris eget commodo vestibulum. Sed
+      vulputate, ante sed ultricies varius, tortor urna aliquet velit, non volutpat libero neque at sapien. Morbi
+      faucibus, mi at vehicula imperdiet, nibh nibh convallis mauris, quis blandit velit orci et tellus. Curabitur
+      vitae efficitur turpis, bibendum venenatis orci. Sed ac tempor dolor, in bibendum metus. Aliquam at vestibulum
+      nisl, vitae ullamcorper felis. Suspendisse nisl elit, venenatis at imperdiet nec, varius eget erat.
+      </BR></BR>
+      Sed facilisis nibh felis, quis dictum mi consequat ac. Proin et neque dapibus, venenatis lacus nec, tristique
+      velit. Maecenas fermentum lectus eu mi congue, vel elementum nisi varius. In hac habitasse platea dictumst. Sed
+      lobortis magna non accumsan gravida. Phasellus sit amet venenatis metus. Cras molestie eu nunc ut congue. Cras
+      eros metus, laoreet a libero eget, rutrum maximus eros. Nulla velit justo, sodales ac luctus feugiat, rutrum sed
+      risus. Curabitur elit elit, tincidunt sit amet lorem a, laoreet sollicitudin felis. Ut ultrices eros eu tortor
+      dignissim, sit amet consectetur sem lacinia.
+      </BR></BR>
+      Quisque blandit lectus est, at hendrerit nisi hendrerit vitae. Ut interdum urna velit, quis tempus leo
+      sollicitudin a. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+      Etiam iaculis velit at lectus luctus, vitae consequat lorem rhoncus. Mauris leo elit, congue vitae aliquet et,
+      mattis a odio. Quisque fermentum quis arcu eu aliquet. Aliquam consequat turpis nec lorem fermentum
+      pellentesque. Suspendisse potenti. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+      inceptos himenaeos. Duis metus eros, molestie aliquam vestibulum eget, cursus a nisl. Sed nec auctor sem, ut
+      venenatis ex. Vivamus hendrerit pulvinar scelerisque. Curabitur rutrum tellus ac ligula luctus sagittis.
+      Praesent accumsan egestas est molestie feugiat. Pellentesque in diam ac dui gravida facilisis non eu odio.</p>
+  </section>
+  <!-- section 2: specifications -->
+  <section class="product_section" id="section-2">
+    <h1>Specifications</h1>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Maecenas quis lectus non erat suscipit tempus.
+Ut euismod eros eu maximus suscipit.
+Duis dignissim lectus id justo cursus, sit amet sagittis urna iaculis.
+Fusce eu tellus at dui fermentum ultricies malesuada ac massa.
+Nam vitae massa congue, imperdiet tortor nec, bibendum diam.
+Pellentesque ornare ipsum semper facilisis commodo.
+Integer sed nisi et enim efficitur suscipit id a augue.
+Curabitur nec tortor ut tortor mollis malesuada non a eros.
+Ut et tellus ornare, aliquam lectus ut, dignissim est.
+Nam at nunc ut elit posuere luctus.
+Donec pellentesque mauris sit amet fringilla eleifend.
+Mauris et turpis sodales, convallis quam et, auctor enim.
+Mauris semper odio vel erat eleifend maximus.
+Suspendisse ac urna ac est ornare vehicula.
+Sed eget metus quis diam rhoncus mollis.
+Cras cursus lectus id lacus placerat suscipit.
+Morbi ut tellus in diam elementum tempor.
+Etiam sed turpis aliquet, consectetur felis nec, scelerisque nisl.
+Fusce tristique neque sed pulvinar volutpat. 
+Maecenas ut sapien sed metus condimentum facilisis.
+Vestibulum vulputate lectus vel risus mattis pellentesque.
+Donec ullamcorper quam at interdum aliquet.
+Maecenas vel sapien sed massa posuere tincidunt.
+Integer vel neque quis arcu mattis convallis eu vitae lectus.
+Donec at quam non sem lobortis cursus quis fermentum enim.
+  </section>
+  <!-- section 3: Dimensions-->
+  <section class="product_section" id="section-3">
+    <h1>Dimensions</h1>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Maecenas quis lectus non erat suscipit tempus.
+Ut euismod eros eu maximus suscipit.
+Duis dignissim lectus id justo cursus, sit amet sagittis urna iaculis.
+Fusce eu tellus at dui fermentum ultricies malesuada ac massa.
+Nam vitae massa congue, imperdiet tortor nec, bibendum diam.
+Pellentesque ornare ipsum semper facilisis commodo.
+Integer sed nisi et enim efficitur suscipit id a augue.
+Curabitur nec tortor ut tortor mollis malesuada non a eros.
+Ut et tellus ornare, aliquam lectus ut, dignissim est.
+Nam at nunc ut elit posuere luctus.
+Donec pellentesque mauris sit amet fringilla eleifend.
+Mauris et turpis sodales, convallis quam et, auctor enim.
+Mauris semper odio vel erat eleifend maximus.
+Suspendisse ac urna ac est ornare vehicula.
+Sed eget metus quis diam rhoncus mollis.
+Cras cursus lectus id lacus placerat suscipit.
+Morbi ut tellus in diam elementum tempor.
+Etiam sed turpis aliquet, consectetur felis nec, scelerisque nisl.
+Fusce tristique neque sed pulvinar volutpat.
+Maecenas ut sapien sed metus condimentum facilisis.
+Vestibulum vulputate lectus vel risus mattis pellentesque.
+Donec ullamcorper quam at interdum aliquet.
+Maecenas vel sapien sed massa posuere tincidunt.
+Integer vel neque quis arcu mattis convallis eu vitae lectus.
+Donec at quam non sem lobortis cursus quis fermentum enim.
+  </section>
+  <section class="product_section" id="section-4">
+    <h1>Documents</h1>
+  <img src="https://images7.alphacoders.com/498/thumb-1920-498256.jpg" />
+  </section>
+  <section class="product_section" id="section-5">
+    <h1>Support</h1>
+
+  </section>
+</body>
+<script>
+  var navbarF = document.getElementById("navbar_new");
+  var navbarS = document.getElementById("mySidenav");
+  var windowH = $(window).height(),
+    top;
+  // The function actually applying the offset
+  function offsetAnchor() {
+    if (location.hash.length !== 0) {
+      window.scrollTo(window.scrollX, window.scrollY - 50);
+    }
+  }
+  $(document).on('click', 'a[href^="#"]', function (event) {
+    window.setTimeout(function () {
+      offsetAnchor();
+    }, 0);
+  });
+
+  $(document).ready(function () {
+    $(window).scroll(function () {
+      if ($(window).scrollTop() > windowH - 450) {
+        $(navbarS).addClass("sticky");
+      } else {
+        $(navbarS).removeClass("sticky");
+      }
+    })
+    if ($(window).width() > 481 && $(window).width() < 768) {
+      $(navbarS).removeClass("sticky");
+      $(navbarS).addClass("hidemenu");
+    }
+  });
+</script>
+
+</html>
